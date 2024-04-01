@@ -1,24 +1,9 @@
-# README
+# Setup
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+* Application generated with: "rails new scrap_info -d=postgresql -j=esbuild" 
 
-Things you may want to cover:
+* Added gem 'cssbundling-rails' and run 'rails css:install:bootstrap'
 
-* Ruby version
+* Created rails controller for home
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+* To install react: 'npm install react react-dom'
