@@ -1,0 +1,38 @@
+<div class="card mt-2">
+  <h5 class="card-header">Scrape Product Details</h5>
+  <div class="card-body">
+    <%= form_with url: product_details_scrape_path, method: :post do |form| %>
+      <%= form.label :url, "URL: " %>
+      <%= form.text_field :url %>
+      <%= form.submit "Submit" %>
+    <% end %>
+    <div class='mt-4'>
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">Id</th>
+            <th scope="col">Title</th>
+            <th scope="col">Price</th>
+            <th scope="col">Size</th>
+            <th scope="col">Category</th>
+            <th scope="col">Created at</th>
+            <th scope="col">Updated at</th>
+          </tr>
+        </thead>
+        <tbody class="table-group-divider">
+          <% @products.each do |product| %>
+            <tr>
+              <th scope="row"><%= product.id %></th>
+              <td><%= product.title[0,50] %></td>
+              <td><%= product.price %></td>
+              <td><%= product.size %></td>
+              <td><%= product.category %></td>
+              <td><%= product.created_at %></td>
+              <td><%= product.updated_at %></td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

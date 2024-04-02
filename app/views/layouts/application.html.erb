@@ -5,12 +5,16 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_include_tag "application", "data-turbo-track": "reload", type: "module" %>
   </head>
-
   <body>
-    <%= yield %>
+    <div class='container-fluid'>
+      <div class="row">
+        <div class="col-lg-8 mx-auto">
+          <%= yield %>
+        </div>
+      </div>
+    </div>
   </body>
 </html>

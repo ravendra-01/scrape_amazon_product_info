@@ -66,3 +66,7 @@ group :test do
   gem "selenium-webdriver"
 end
 gem 'cssbundling-rails'
+
+gem 'nokogiri'
+gem 'open-uri'
+gem 'byebug'
