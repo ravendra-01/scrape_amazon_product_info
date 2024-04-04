@@ -1,0 +1,6 @@
+:scheduler:
+  :schedule:
+    daily_record:
+      cron: "0 0 * * *"
+      class: "UpdateDetailsWorker"
+      queue: "default"

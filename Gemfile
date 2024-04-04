@@ -70,3 +70,6 @@ gem 'cssbundling-rails'
 gem 'nokogiri'
 gem 'open-uri'
 gem 'byebug'
+
+gem 'sidekiq', '~> 7.2'
+gem 'sidekiq-scheduler', '~> 5.0'

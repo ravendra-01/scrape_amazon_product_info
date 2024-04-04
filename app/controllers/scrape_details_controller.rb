@@ -3,11 +3,11 @@ require 'open-uri'
 class ScrapeDetailsController < ApplicationController
 
   def product_details
-    @products = Product.all
+    @products = params[:category].present? ? Product.where(category: params[:category]) : Product.all
   end
   
   def scrape
-    url = params[:url]
+    url = params[:product_url]
     doc = Nokogiri::HTML(URI.open(url))
 
     title = doc.css('#productTitle').text.strip
@@ -26,5 +26,10 @@ class ScrapeDetailsController < ApplicationController
     end
 
     redirect_to product_details_path
+  end
+
+  def search_product
+    @products = params[:search_input].present? ? Product.where("title iLIKE ?", "%#{params[:search_input]}%") : Product.all
+    render partial: "scrape_details/product_list"
   end
 end

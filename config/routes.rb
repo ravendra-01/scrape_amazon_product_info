@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  require 'sidekiq/web'
+  mount Sidekiq::Web => '/sidekiq'
   root 'home#index'
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
@@ -10,4 +12,5 @@ Rails.application.routes.draw do
   # root "posts#index"
   get '/product_details', to: 'scrape_details#product_details'
   post '/product_details/scrape', to: 'scrape_details#scrape'
+  get '/product_details/search_product', to: 'scrape_details#search_product'
 end
