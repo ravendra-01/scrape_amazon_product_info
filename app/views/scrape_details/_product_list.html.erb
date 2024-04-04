@@ -1,9 +1,9 @@
 <% @products.each do |product| %>
   <tr>
     <th scope="row"><%= product.id %></th>
-    <td><%= product.title[0,50] %></td>
+    <td><%= product.title[0,20] %></td>
+    <td><%= product.description[0,45] %></td>
     <td><%= product.price %></td>
-    <td><%= product.size %></td>
     <td><%= product.category %></td>
     <td><%= product.created_at %></td>
     <td><%= product.updated_at %></td>
